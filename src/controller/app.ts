@@ -17,13 +17,13 @@ export default function createApp(options = {}, dependencies: Dependencies) {
 
   const app = fastify(options)
 
-  app.get('/api/pets', async () => {
+  app.get('/api/pets', async (request, reply) => {
     const pets = await petService.getAll();
-    return pets;
+    return {pets, message: 'success'};
   })
 
   type PostPetsRoute = {
-    Body: PetToCreate;
+    Body: PetToCreate
   }
   app.post<PostPetsRoute>('/api/pets', async (request, reply) => {
     const { body: petToCreate } = request;

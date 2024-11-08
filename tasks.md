@@ -45,7 +45,7 @@ Right now the user can provide any kind of body for the POST request. Ensure tha
 
 ## Task 2: Determines the reply's body
 
-Add a desired output schema (deserialization) to the `GET /api/pets` and `POST /api/pets`.
+Add a desired output schema (serialization) to the `GET /api/pets` and `POST /api/pets`.
 
 - What do you think what is the advantage of this?
 
