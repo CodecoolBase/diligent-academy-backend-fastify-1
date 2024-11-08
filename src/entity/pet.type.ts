@@ -5,4 +5,4 @@ export type Pet = {
   weightInKg: number,
 };
 
-export type PetProperties = Omit<Pet, 'id'>;
+export type PetToCreate = Omit<Pet, 'id'>;

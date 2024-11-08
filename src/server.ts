@@ -1,4 +1,4 @@
-import createApp from "./app";
+import createApp from "./controller/app";
 import { createPgClient } from "./db";
 
 const PORT = 4400;

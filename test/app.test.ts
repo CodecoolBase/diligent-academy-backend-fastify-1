@@ -1,5 +1,5 @@
 import { FastifyInstance } from "fastify";
-import createApp from "../src/app"
+import createApp from "../src/controller/app"
 
 let app: FastifyInstance | undefined;
 

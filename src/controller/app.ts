@@ -1,8 +1,8 @@
 import fastify from 'fastify';
-import { PetService } from './service/pet.service';
-import { PetRepository } from './repository/pet.repository';
-import { DbClient } from './db';
-import { PetProperties } from './entity/pet.type';
+import { PetService } from '../service/pet.service';
+import { PetRepository } from '../repository/pet.repository';
+import { DbClient } from '../db';
+import { PetToCreate } from '../entity/pet.type';
 
 type Dependencies = {
   dbClient: DbClient;
@@ -23,7 +23,7 @@ export default function createApp(options = {}, dependencies: Dependencies) {
   })
 
   type PostPetsRoute = {
-    Body: PetProperties;
+    Body: PetToCreate;
   }
   app.post<PostPetsRoute>('/api/pets', async (request, reply) => {
     const { body: petToCreate } = request;

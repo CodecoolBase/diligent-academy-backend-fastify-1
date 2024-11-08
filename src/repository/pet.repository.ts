@@ -1,5 +1,5 @@
 import { DbClient } from "../db";
-import { Pet, PetProperties } from "../entity/pet.type";
+import { Pet, PetToCreate } from "../entity/pet.type";
 
 export class PetRepository {
   private readonly client;
@@ -24,7 +24,7 @@ export class PetRepository {
     return rows.map(this.toEntity)
   }
 
-  async create(pet: PetProperties) {
+  async create(pet: PetToCreate) {
     const {name, age, weightInKg} = pet;
     const sql = `
       INSERT INTO pet (name, age, weight_in_kg) VALUES 
