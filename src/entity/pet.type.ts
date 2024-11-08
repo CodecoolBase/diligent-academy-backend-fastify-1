@@ -3,4 +3,6 @@ export type Pet = {
   name: string,
   age: number,
   weightInKg: number,
-}
+};
+
+export type PetProperties = Omit<Pet, 'id'>;
